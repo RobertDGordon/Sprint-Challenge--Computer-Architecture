@@ -185,7 +185,7 @@ class CPU:
             self.ir = IR
             self.set_ab(opcount)
             self.branchtable[IR]()
-        print('Halted.')
+        print('Halting and catching fire.')
         sys.exit(1)
 
     def set_ab(self, opcount):
