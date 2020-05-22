@@ -65,6 +65,20 @@ class CPU:
             elif self.register[a] < self.register[b]:
                 self.FL = 0b00000100
                 # print('a < b')
+        elif op == 'AND':
+            self.register[a] = self.register[a] & self.register[b]
+        elif op == 'OR':
+            self.register[a] = self.register[a] | self.register[b]
+        elif op == 'XOR':
+            self.register[a] = self.register[a] ^ self.register[b]
+        elif op == 'NOT':
+            self.register[a] = ~self.register[a]
+        elif op == 'SHL':
+            self.register[a] = self.register[a] << self.register[b]
+        elif op == 'SHR':
+            self.register[a] = self.register[a] >> self.register[b]
+        elif op == 'MOD':
+            self.register[a] = self.register[a] % self.register[b]
         else:
             raise Exception("Unsupported ALU operation")
 
